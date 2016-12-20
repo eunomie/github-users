@@ -80,9 +80,10 @@ test: &test
 #
 production:
   <<: *default
-  database: github-users_production
-  username: github-users
-  password: <%= ENV['GITHUB-USERS_DATABASE_PASSWORD'] %>
+  host:     <%= ENV['DB_HOST'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 cucumber:
   <<: *test
