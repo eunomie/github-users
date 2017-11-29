@@ -13,8 +13,10 @@ class UsersController < ApplicationController
 
   Contract User::ActiveRecord_Relation => Any
   def users_found(users)
-    @users = UserListPresenter.new users
+    @users = UserListPresenter.new(users
+     )
     render :index
+   
   end
 
   Contract EmptyUserList => Any
